@@ -1,5 +1,6 @@
 ;; shadow-cljs configuration
-{:source-paths
+{:dev-http {8021 {:root "target/test"}}
+ :source-paths
  ["src/dev"
   "src/main"
   "src/test"]
@@ -14,6 +15,10 @@
         :modules {:main {:entries [my.core]}
                   :app {:entries [my.app]
                         :depends-on #{:main}}}}
+  :browser-test {:target :browser-test
+                 :test-dir "target/test"
+                 :ns-regexp "-spec$"
+                 :module-loader true}
   :test {:target :karma
          :output-to "target/ci.js"
          :ns-regexp "-spec$"}}}
