@@ -1,7 +1,11 @@
 (ns my.app-spec
-  (:require [cljs.test :refer [deftest is]]
+  (:require [cljs.test :refer [async deftest is]]
             [my.app :as app]
             [my.core]))
 
 (deftest app-should-return-value-from-lazy-module
-  (is (true? (app/init))))
+  (async done
+    (-> (app/init)
+      (.then (fn [value]
+               (is (true? value))
+               (done))))))
