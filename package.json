@@ -1,0 +1,11 @@
+{
+  "name": "karma-modules-support",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "karma": "^6.3.2",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-cljs-test": "^0.1.0",
+    "shadow-cljs": "2.14.1"
+  }
+}

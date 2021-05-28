@@ -1,0 +1,19 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+
+ :dependencies
+ []
+
+ :builds
+ {:app {:target :browser
+        :output-dir "public/js"
+        :asset-path "/js"
+        :modules {:main {:entries [my.core]}
+                  :app {:entries [my.app]
+                        :depends-on #{:main}}}}
+  :test {:target :karma
+         :output-to "target/ci.js"
+         :ns-regexp "-spec$"}}}
