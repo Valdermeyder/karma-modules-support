@@ -21,4 +21,5 @@
                  :module-loader true}
   :test {:target :karma
          :output-to "target/ci.js"
-         :ns-regexp "-spec$"}}}
+         :ns-regexp "-spec$"
+         :closure-defines {shadow.loader.TEST true}}}}
